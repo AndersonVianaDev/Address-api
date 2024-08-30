@@ -10,4 +10,5 @@ public interface AddressRepository {
     Optional<Address> findByNumberAndZipCode(String number, String zipCode);
     Optional<Address> findById(UUID id);
     void delete(UUID id);
+    Address update(Address address);
 }
