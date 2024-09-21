@@ -12,7 +12,7 @@ import java.util.UUID;
 @Repository
 public interface SpringAddressRepository extends JpaRepository<AddressEntity, UUID> {
     @Query("SELECT a FROM AddressEntity a " +
-            "WHERE a.number:= number " +
-            "AND a.zipCode:= zipcode")
+            "WHERE a.number=:number " +
+            "AND a.zipCode=:zipCode")
     Optional<AddressEntity> findByNumberAndZipCode(@Param("number") String number, @Param("zipCode") String zipCode);
 }
