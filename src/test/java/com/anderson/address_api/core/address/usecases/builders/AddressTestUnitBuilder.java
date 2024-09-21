@@ -4,6 +4,7 @@ import com.anderson.address_api.core.address.builder.AddressBuilder;
 import com.anderson.address_api.core.address.domain.Address;
 import com.anderson.address_api.core.address.dtos.AddressExternalDTO;
 import com.anderson.address_api.core.address.dtos.AddressRequestDTO;
+import com.anderson.address_api.core.address.dtos.AddressUpdateDTO;
 
 import java.time.Instant;
 import java.util.UUID;
@@ -30,5 +31,17 @@ public class AddressTestUnitBuilder {
                 .withCreatedAt(Instant.now())
                 .withUpdatedAt(Instant.now())
                 .build();
+    }
+
+    public static AddressUpdateDTO newUpdateDTO() {
+        return new AddressUpdateDTO("890", "complement 2");
+    }
+
+    public static AddressUpdateDTO newUpdateDTOComplementNULL() {
+        return new AddressUpdateDTO("890", null);
+    }
+
+    public static AddressUpdateDTO newUpdateDTONumberNULL() {
+        return new AddressUpdateDTO(null, "complement 2");
     }
 }
